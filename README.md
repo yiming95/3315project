@@ -7,7 +7,7 @@
 
 ### 爬虫部分
 
-爬虫部分使用[Scrapy框架] (https://scrapy.org/) 
+爬虫部分使用 Scrapy框架 (https://scrapy.org/) 
 
 
 
