@@ -7,12 +7,13 @@
 
 > 本仓库是作者在3315计划中的工作内容 👇👇
 
-### Weekly Report
+### 爬虫部分
 
-每周组会交的周报，记录了每周的工作量，时间从2月末开始。
+爬虫部分使用 Scrapy框架 (https://scrapy.org/) 
+
+
 
 
 <!-- Markdown link & img dfn's -->
 [travis-image]: https://img.shields.io/travis/dbader/node-datadog-metrics/master.svg?style=flat-square
 [travis-url]: https://travis-ci.org/dbader/node-datadog-metrics
-
