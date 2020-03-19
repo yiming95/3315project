@@ -7,11 +7,9 @@
 
 > 本仓库是作者在3315计划中的工作内容 👇👇
 
-### 爬虫部分
+### Weekly Report
 
-爬虫部分使用 Scrapy框架 (https://scrapy.org/) 
-
-
+每周组会交的周报，记录了每周的工作量，时间从2月末开始。
 
 
 <!-- Markdown link & img dfn's -->
