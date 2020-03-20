@@ -1,0 +1,514 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html  xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta name="language" content="zh-hk" />
+		<meta name="robots" content="index,follow,noarchive" />
+		<meta name="keywords" content="Hong Kong daily news, government news, press releases, online news, feature stories, photo galleries, videos, HKSARG, ISD"/>
+		<meta name="description" content="news.gov.hk is the source of online news, features and commentary from the Information Services Department of the Government of the Hong Kong Special Administrative Region"/>
+		<meta name="date" content="2017-11-24T11:59:00+08:00" />
+		<meta name="last-modified" content="24/11/2017 11:59:00 AM" />
+		<meta http-equiv="refresh" content="3600">
+		<title>news.gov.hk</title>
+
+		<script>	
+			var sys_lang="eng";
+			var sys_load_webcast="true";
+		</script>
+		<link rel="apple-touch-icon" sizes="57x57" href="/web/images/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/web/images/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/web/images/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/web/images/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/web/images/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/web/images/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/web/images/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/web/images/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/web/images/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/web/images/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/web/images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/web/images/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/web/images/favicon/favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/web/images/favicon/ms-icon-144x144.png">
+<link rel="manifest" href="/web/images/favicon/manifest.json">
+
+<link type="text/css" rel="stylesheet" href="/web/common/css/eng/vendor.css"/>
+<link type="text/css" rel="stylesheet" href="/web/common/css/eng/global.css"/>
+<script type="text/javascript" src="/web/common/js/eng/vendor/vendor.js"></script>
+
+
+<script src="/web/common/js/jquery-dateFormat.min.js"></script>
+<script src="/web/common/js/isd_common_config.js"></script>
+<script src="/web/common/js/getwebcastdata.js"></script>
+<script src="/web/common/js/isd_common.js"></script>
+
+<script>
+	var date = new Date();
+	document.write("<script src=\"/web/common/js/breadcrumb_"+sys_lang+".js?date=" + date.getTime() + "\"><\/script>");
+	
+	$(function(){
+		<!-- load weather -->
+		loadDataFeedWeather(sys_lang);
+		<!-- load WebCast -->
+		loadWebCast();
+		getWebCastData(sys_lang);
+	})
+</script>
+
+	</head>
+	<body>
+		<!-- Webcasts -->
+	<!-- ./Webcasts -->
+
+	<!-- Menu navbar -->
+	<nav class="header navbar navbar-toggleable-lg">	
+
+		<div class="navbar-info collapse navbar-collapse" id="navbar-information">
+			<div class="container-fluid">
+				<ul class="list-info list-unstyled list-inline d-flex flex-wrap align-items-center">
+
+					<li class="list-inline-item"><span id="information-date"></span></li>
+
+					<li class="list-inline-item">
+						<a id="weatherIcon" class="align-middle" target="_blank" href="https://www.hko.gov.hk/en/wxinfo/currwx/current.htm" title="Hong Kong Observatory">
+							<span class="sr-only">Open in new window - Hong Kong Observatory website</span>
+						</a>
+					</li>
+
+					<li class="list-inline-item mob-6">
+						<a class="align-middle" target="_blank" href="https://www.hko.gov.hk/en/wxinfo/currwx/current.htm" title="Temperature">
+							<i class="fa fa-thermometer-empty align-middle" aria-hidden="true"></i>
+							<span class="align-middle" id="information-temperature"></span>
+							<span class="sr-only">Open in new window - Hong Kong Observatory website</span>
+						</a>
+					</li>
+
+					<li class="list-inline-item mob-6">
+						<a class="align-middle" target="_blank" href="https://www.hko.gov.hk/en/wxinfo/currwx/current.htm" title="Relative Humidity">
+							<i class="align-middle fa fa-tint" aria-hidden="true"></i>
+							<span class="align-middle" id="information-humidity"></span>
+							<span class="sr-only">Open in new window - Hong Kong Observatory website</span>
+						</a>
+					</li>
+
+					<li class="list-inline-item hidden-lg-down">
+						<a class="align-middle" target="_blank" class="ml-2" href="http://traffic.td.gov.hk/selection_e.htm" title="Traffic Condition">
+							<i class="fa fa-car" aria-hidden="true"></i>
+							<span class="sr-only">Open in new window - Hong Kong Transport Department website</span>
+						</a>
+					</li>
+
+					<li class="list-inline-item hidden-xl-up">
+						<a href="/eng/advanced_search.html">Search</a>
+					</li>
+
+					<li class="list-inline-item hidden-xl-up">
+						<a href="http://traffic.td.gov.hk/selection_e.htm" target="_blank">Traffic Conditions</a>
+					</li>
+
+					<li class="list-inline-item hidden-xl-up">
+						<a href="/newsSubscription/index.jsp?lang=eng">Subscription</a>
+					</li>
+					
+					<li class="list-inline-item border-0 fontsize-setting ml-0 ml-xl-auto">
+						<a id="font-small" href="javascript:void(0);"><span class="sr-only">Default Font Size</span></a>
+						<a id="font-middle" href="javascript:void(0);"><span class="sr-only">Larger Font Size</span></a>
+						<a id="font-large" href="javascript:void(0);"><span class="sr-only">Largest Font Size</span></a>
+					</li>
+
+					<li class="list-inline-item border-0 hidden-lg-down">
+						<a href="/eng/rss/index.html"><i class="fa fa-rss-square" aria-hidden="true"></i><span class="sr-only">RSS</span></a>
+						<a href="/newsSubscription/index.jsp?lang=eng"><i class="fa fa-envelope-o hidden-lg-down" aria-hidden="true"></i><span class="hidden-xl-up">Subscription</span></a>
+					</li>
+
+					<li class="list-inline-item border-0 lang-setting d-flex d-xl-block">
+						<a class="active" href="javascript:chglang('eng');">ENG</a>
+						<a class="" href="javascript:chglang('chi');">繁</a>
+						<a class="" href="javascript:chglang('chs');">簡</a>
+					</li>
+				</ul>
+
+			</div>
+		</div>
+
+		<div class="navbar-tools">
+			<div class="container-fluid">
+				<div class="row align-items-center">
+
+					<a class="navbar-brand p-0 mr-0" href="/eng/index.html" >
+						<span class="sr-only">news.gov.hk homepage from Hong Kong's Information Services Department</span>
+					</a>
+					
+					<button class="navbar-toggler light-setting align-self-center hidden-xl-up ml-auto" role="button" aria-label="Toggle Light Mode">
+						<i class="fa fa-adjust" aria-hidden="true"></i>
+						<span class="sr-only">Toggle Light Mode</span>
+					</button>
+
+					<button class="navbar-toggler align-self-center hidden-xl-up" role="button" data-target="#navbar-information" aria-controls="navbar-information" aria-expanded="false" aria-label="Toggle Tools Menu">
+						<i class="fa fa-cog" aria-hidden="true"></i>
+						<span class="sr-only">Toggle Tools Menu</span>
+					</button>
+
+					<button class="navbar-toggler align-self-center hidden-xl-up" role="button" data-target="#navbar-maincatalog" aria-controls="navbar-maincatalog" aria-expanded="false" aria-label="Toggle Navigation Menu">
+						<i class="fa fa-bars" aria-hidden="true"></i>
+						<span class="sr-only">Toggle Navigation Menu</span>
+					</button>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="navbar-catalog collapse navbar-collapse" id="navbar-maincatalog">
+			<div class="container-fluid">
+				<ul class="navbar-nav">
+					<li class='nav-item'>
+<a class='nav-link' target='_self' href='/eng/index.html'>Home</a>
+</li>
+<li class='nav-item dropdown'>
+<a class='nav-link dropdown-toggle' id='navbarDropdowncatalog102' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false' href=''>Categories</a>
+<div class='dropdown-menu rounded-0' aria-labelledby='navbarDropdowncatalog102'>
+<a class='dropdown-item nav-link' target='_self' href='/eng/categories/finance/index.html'>Business & Finance</a> 
+<a class='dropdown-item nav-link' target='_self' href='/eng/categories/school_work/index.html'>At School, At Work</a> 
+<a class='dropdown-item nav-link' target='_self' href='/eng/categories/health/index.html'>Health & Community</a> 
+<a class='dropdown-item nav-link' target='_self' href='/eng/categories/environment/index.html'>Environment</a> 
+<a class='dropdown-item nav-link' target='_self' href='/eng/categories/law_order/index.html'>Law & Order</a> 
+<a class='dropdown-item nav-link' target='_self' href='/eng/categories/infrastructure/index.html'>Infrastructure & Logistics</a> 
+<a class='dropdown-item nav-link' target='_self' href='/eng/categories/admin/index.html'>Admin & Civic Affairs</a> 
+<a class='dropdown-item nav-link' target='_self' href='/eng/categories/city_life/index.html'>City Life</a> 
+<a class='dropdown-item nav-link' target='_self' href='/eng/categories/record/index.html'>On The Record</a> 
+</div>
+</li>
+<li class='nav-item dropdown'>
+<a class='nav-link dropdown-toggle' id='navbarDropdowncatalog3292' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false' href=''>Photo Gallery</a>
+<div class='dropdown-menu rounded-0' aria-labelledby='navbarDropdowncatalog3292'>
+<a class='dropdown-item nav-link' target='_self' href='/eng/photo_gallery/events/index.html'>News</a> 
+<a class='dropdown-item nav-link' target='_self' href='/eng/photo_gallery/people/index.html'>Special Events</a> 
+</div>
+</li>
+<li class='nav-item'>
+<a class='nav-link' target='_self' href='/eng/feature/index.html'>Features</a>
+</li>
+<li class='nav-item'>
+<a class='nav-link' target='_self' href='/eng/categories/wuhan/index.html'>Coronavirus Disease (COVID-19)</a>
+</li>
+<li class='nav-item'>
+<a class='nav-link' target='_self' href='/eng/categories/20-21budget/index.html'>2020-21 Budget</a>
+</li>
+<li class='nav-item'>
+<a class='nav-link' target='_self' href='/eng/categories/clarification/index.html'>Clarifications</a>
+</li>
+					<li class="nav-item nav-video-item ml-0 ml-xl-auto"><a class="nav-link" href="/eng/news_video/index.html"><i class="fa fa-video-camera align-middle hidden-lg-down" aria-hidden="true"></i><span class="align-middle">Videos</span></a></li>
+					<li class="nav-item nav-search-item ml-1 hidden-lg-down"><a class="nav-link" href="/eng/advanced_search.html"><i class="fa fa-search" aria-hidden="true"></i><span class="sr-only">Search</span></a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!-- ./Menu navbar -->
+
+		<!-- Main Content -->
+		<main>
+			
+			<section class="section-a1news my-4">
+				<div class="container">
+					<div class="row">
+					
+						<!-- A1 News -->
+						<div class="col-12 col-lg-7 col-xl-8 my-2">
+							<div class="carousel-container">
+								<div class="carousel-a1 swiper-container" id="carousel_a1">
+									<div class="swiper-wrapper" id="mainA1News">
+									</div>
+								</div>
+
+								<div class="carousel-autoplay-control is-playing">
+									<a href="javascript:void(0)" class="carousel-button-autoplay carousel-button-pause">
+										<i class="fa fa-pause" aria-hidden="true"></i>
+										<span class="sr-only">Stop autoplay</span>
+									</a>
+									<a href="javascript:void(0)"  class="carousel-button-autoplay carousel-button-play">
+										<i class="fa fa-play" aria-hidden="true"></i>
+										<span class="sr-only">Start autoplay</span>
+									</a>
+								</div>
+
+								<a class="carousel-button-next carousel-a1-next" href="javascript:void(0)" data-slide="prev">
+									<i class="fa fa-chevron-right" aria-hidden="true"></i>
+									<span class="sr-only">Next</span>
+								</a>
+								<a class="carousel-button-prev carousel-a1-prev" href="javascript:void(0)" data-slide="next">
+									<i class="fa fa-chevron-left" aria-hidden="true"></i>
+									<span class="sr-only">Previous</span>
+								</a>
+							</div>
+						</div>
+
+						<!-- news -->
+						<div class="col-12 col-lg-5 col-xl-4 my-2">
+							<div class="mx-3 mr-lg-3 ml-lg-0">
+							<h1 class="section-title d-block h6 text-uppercase font-weight-bold mb-2">News</h1>
+							<div id="mainTicker"></div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</section>
+
+			<section class="section-banner my-4">
+				<div class="container">
+					<div class="carousel-container">
+						<div class="carousel-banner swiper-container" id="carousel_banner">
+						</div>
+
+						<div class="carousel-autoplay-control mt-3 text-right is-playing">
+							<a href="javascript:void(0)" class="carousel-button-autoplay carousel-button-pause">
+								<i class="fa fa-pause" aria-hidden="true"></i>
+								<span class="sr-only">
+								Stop autoplay
+								</span>
+							</a>
+							<a href="javascript:void(0)"  class="carousel-button-autoplay carousel-button-play">
+								<i class="fa fa-play" aria-hidden="true"></i>
+								<span class="sr-only">
+								Start autoplay
+								</span>
+							</a>
+						</div>
+
+						<a class="carousel-button-next carousel-banner-next" href="javascript:void(0)" data-slide="prev">
+							<i class="fa fa-chevron-right" aria-hidden="true"></i>
+							<span class="sr-only">Next</span>
+						</a>
+						<a class="carousel-button-prev carousel-banner-prev" href="javascript:void(0)" data-slide="next">
+							<i class="fa fa-chevron-left" aria-hidden="true"></i>
+							<span class="sr-only">Previous</span>
+						</a>
+
+					</div>
+
+					<div class="swiper-pagination carousel-banner-pagination mt-3 text-center"></div>
+
+				</div>
+			</section>
+
+			<section class="section-news-social my-4">
+				<div class="container">
+					<div class="row">
+						<div class="col-12 col-lg-6 col-xl-6 mx-sm-auto my-2" id="mainPhotoNews">
+							
+						</div>
+						<div class="col-12 col-md-10 col-lg-6 col-xl-6 mx-sm-auto my-2">
+	<div class="mx-3 ml-lg-0">
+		<h2 class="section-title h6 d-inline-block text-uppercase font-weight-bold mb-2">FOLLOW US</h2>
+
+		<ul class="nav nav-tabs social-tab justify-content-between align-items-center" id="social-tab" role="tablist">
+			<li class="nav-item col bcr-purple">
+				<a class="nav-link active" data-toggle="tab" href="#instagram_tab" role="tab" aria-controls="instagram_tab">
+					<i class="fa fa-instagram" aria-hidden="true"></i>
+					<span class="sr-only">instagram</span>
+				</a>
+			</li>
+			<li class="nav-item col bcr-blue">
+				<a class="nav-link" href="https://www.facebook.com/govnews.hk" target="_blank">
+					<i class="fa fa-facebook" aria-hidden="true"></i>
+					<span class="sr-only">facebook</span>
+				</a>
+			</li>
+			<li class="nav-item col bcr-red">
+				<a class="nav-link" data-toggle="tab" href="#youtube_tab" role="tab" aria-controls="youtube_tab">
+					<i class="fa fa-youtube" aria-hidden="true"></i>
+					<span class="sr-only">youtube</span>
+				</a>
+			</li>
+			<li class="nav-item col bcr-babyblue">
+				<a class="nav-link" data-toggle="tab" href="#twitter_tab" role="tab" aria-controls="twitter_tab">
+					<i class="fa fa-twitter" aria-hidden="true"></i>
+					<span class="sr-only">twitter</span>
+				</a>
+			</li>
+			<li class="nav-item col bcr-yellow">
+				<a class="nav-link" href="http://weibo.com/newsgovhk" target="_blank">
+					<i class="fa fa-weibo" aria-hidden="true"></i>
+					<span class="sr-only">weibo</span>
+				</a>
+			</li>
+			<li class="nav-item col bcr-green">
+				<a class="nav-link" href="/eng/about/index_wechat.html">
+					<i class="fa fa-weixin" aria-hidden="true"></i>
+					<span class="sr-only">weixin</span>
+				</a>
+			</li>
+		</ul>
+
+		<div class="tab-content social-content">
+			<div class="tab-pane active" id="instagram_tab" role="tabpanel">
+				<div class="ig-page">
+					<div class="ig-page_header">
+
+						<div class="iconimg"><img alt="Instagram Link" src="/web/images/instagram/instagram_eng_icon.jpg"></div>
+
+						<div class="igaccinfo">
+							<p style="font-size: 16px">newsgovhk
+								<a href="https://www.instagram.com/newsgovhk/" target="_blank">FOLLOW</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<script>
+					var closeIgInclude = false;
+					function igInclude(){
+						setTimeout(function(){
+							if(closeIgInclude == false){
+								return false;
+							}
+						},10000);
+				        var script = document.createElement("script");
+				        script.type = "text/javascript";
+				        script.src = "//lightwidget.com/widgets/lightwidget.js";
+				        script.onload = function(){
+				        	closeIgInclude = true;
+	    			        var iframe = document.createElement('iframe');
+	    	                iframe.src = "//lightwidget.com/widgets/5c9e888d3720543098867b03c5c7d073.html";
+	    	                iframe.style = "width: 100%; border: 0; overflow: hidden;";
+	    	                iframe.width = "100%";
+                            iframe.setAttribute("frameborder", "0");
+                            iframe.setAttribute("scrolling", "no");
+	    	                $("#instagram_tab").append(iframe);
+				        };
+				        document.body.appendChild(script);
+					}
+					igInclude();
+				</script>
+			</div>
+			<div class="tab-pane" id="youtube_tab" role="tabpanel">
+				<iframe id="ytplayer" type="text/html" width="100%" height="100%" src="https://www.youtube.com/embed/?listType=playlist&list=PL2D9D8560F6A5A658&enablejsapi=1" frameborder="0" allowfullscreen></iframe>
+				<script>
+					var tag = document.createElement('script');
+
+					tag.src = "https://www.youtube.com/iframe_api";
+					var firstScriptTag = document.getElementsByTagName('script')[0];
+					firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+					var player;
+					function onYouTubeIframeAPIReady() {
+						player = new YT.Player('ytplayer');
+						$('.social-tab').on('show.bs.tab', function(){ 
+							stopVideo();
+						});
+					}
+
+					function stopVideo() {
+						if (player == undefined || $.isFunction(player.stopVideo) == false) return;
+						player.stopVideo();
+					}
+				</script>
+			</div>
+			<div class="tab-pane" id="twitter_tab" role="tabpanel">
+				<a href="https://twitter.com/intent/tweet?button_hashtag=newsgovhk&ref_src=twsrc%5Etfw" class="twitter-hashtag-button" data-show-count="false">Tweet #newsgovhk</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+				<a class="twitter-timeline" href="https://twitter.com/newsgovhk"></a>
+			</div>
+			<div class="tab-pane" id="weibo_tab" role="tabpanel">
+
+			</div>
+			<div class="tab-pane" id="weixin_tab" role="tabpanel">
+			</div>
+		</div>
+	</div>
+</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="section-video-news my-4">
+				<div class="container">
+					<a class="section-title" href="/eng/news_video/index.html">
+						<h2 class="d-inline-block h6 text-uppercase font-weight-bold mb-2 mx-3">Video News<i class="fa fa-external-link ml-2" aria-hidden="true"></i>
+						</h2>
+					</a>
+					<div id="mainVideoNews"></div>
+				</div>
+			</section>
+
+			<section class="section-tools-realtime my-4">
+				<div class="container">
+					<div class="row">
+						<div class="col-12 col-lg-6 my-2">
+							<div class="mx-3 ml-lg-3 mr-lg-0">
+								<div class="listbox">
+									<div class="listbox-header text-uppercase">
+										<h3 class="mb-0">PRESS RELEASES</h3>
+									</div>
+									<ul class="item-list w-100 mb-0" id="mainPressRelease"></ul>
+								</div>
+							</div>		
+						</div>
+						<div class="col-12 col-lg-6 my-2">
+							<div class="mx-3 mr-lg-3 ml-lg-0">
+								<div class="listbox">
+									<div class="listbox-header text-uppercase">
+										<h3 class="mb-0">TOOLS &amp; RESOURCES</h3>
+									</div>
+									<ul class="item-list list-column-2 w-100 mb-0" id="mainToolsResource"></ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+		</main>
+		<!-- ./Main Content -->
+
+		<!-- Footer -->
+<footer class="footer">
+	<div class="container">
+		<div class="d-flex flex-wrap align-items-center">
+			<ul class="nav footer-info mx-auto mx-lg-0">
+				<li class="nav-item">
+					<a class="nav-link" href="/contactUs/index.jsp?lang=eng">Contact Us</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/eng/about/index.html">About Us</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/eng/archive_calendar.html">Archive</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/eng/sitemap.html">Sitemap</a>
+				</li>
+			</ul>
+			<ul class="nav mx-auto ml-lg-auto mr-lg-0">
+				<li class="nav-item">
+					<a class="nav-link px-1" href="/eng/accessibility_statement.html"><img src="/web/images/icon/wac.gif" alt="Web Accessibility Conformance" /></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link px-1" href="http://www.gov.hk/en/residents/" target="_blank"><img src="/web/images/icon/logo_govhk.gif" alt="GovHK" /></a>
+					<span class="sr-only">Open in new window</span>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link px-1" href="http://www.brandhk.gov.hk/" target="_blank"><img src="/web/images/icon/logo_hk.gif" alt="Brand Hong Kong" /></a>
+					<span class="sr-only">Open in new window</span>
+				</li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<!-- ./Footer -->
+		<div class="backtotop-wrapper">
+		<a class="backtotop" href="#" title="Back To Top">Back to top</a>
+	</div>
+		<script>
+			indexIncludeHTML(sys_lang);
+		</script>
+		<script type="text/javascript" src="/web/common/js/eng/common.js"></script>
+
+	<script>
+		$(function(){
+			globalUpdate();
+		});
+	</script>
+		
+	</body>
+	</html>
