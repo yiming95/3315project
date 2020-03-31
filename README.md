@@ -7,6 +7,17 @@
 
 > 本仓库是作者在3315计划中的工作内容 👇👇
 
+### Weekly Report
+
+每周组会交的周报，记录了每周的工作量，时间从2月末开始。
+
+### Web Scrawler
+
+爬虫部分使用scrapy框架进行开发 💻。
+
+### Frontend
+
+前端部分使用Bootsrap4 + Leaflet 进行可视化开发。
 
 
 
