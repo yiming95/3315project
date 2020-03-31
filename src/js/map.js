@@ -8,7 +8,6 @@ var street = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {attribution
         maxZoom: 19
     });
 
-
 var jsonData = $.ajax({
         // AURIN Job dataset API: http://45.113.233.243:5984/job_json/90a80a4fc502d169ebce4ee07a001fb8
         // testing melbourne geo json API: http://admin:123qweasd@45.113.233.243:5984/geo_json/2adb959d243ca8869f8d9576bb0028c2
@@ -28,10 +27,10 @@ var jsonData = $.ajax({
 $.when(jsonData).done(function() {
 var mymap1 = L.map('mapid1',{
     maxZoom: 14,
-    minZoom: 8,
+    minZoom: 5,
     layers: [street]
 }
-).setView([29.8622194,121.6203873], 12);
+).setView([29.8622194,121.6203873], 5);
 
 // add icon to marker
 var myIcon = L.icon({
