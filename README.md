@@ -7,10 +7,6 @@
 
 > 本仓库是作者在3315计划中的工作内容 👇👇
 
-### Frontend
-
-前端可视化 DEMO
-
 
 
 
@@ -18,3 +14,4 @@
 <!-- Markdown link & img dfn's -->
 [travis-image]: https://img.shields.io/travis/dbader/node-datadog-metrics/master.svg?style=flat-square
 [travis-url]: https://travis-ci.org/dbader/node-datadog-metrics
+
