@@ -1,115 +1,125 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
-          integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
-          crossorigin=""/>
+        integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+        crossorigin="" />
 
     <link rel="stylesheet" type="text/css" href="./style.css" />
-    <link rel="shortcut icon" href="assets/unnc.jpeg"> 
+    <link rel="shortcut icon" href="assets/unnc.jpeg">
     <title>3315</title>
 </head>
 
 <body>
-<!-- Navigation -->
+    <!-- Navigation -->
 
-<nav class="navbar navbar-expand-lg navbar-light fixed-top" >
-    <div class="container">
-        <img class="navbar-brand" src="./assets/unnc.jpeg" alt="logo">
-        <a class="navbar-brand" href="#">UNNC 3315智能预警预测系统</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-                
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">项目简介</a>
-                </li>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <img class="navbar-brand" src="./assets/unnc.jpeg" alt="logo">
+            <a class="navbar-brand" href="#">UNNC 3315传染病智能预警预测系统</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
 
-                <li class="nav-item">
-                    <a class="nav-link" href="alert.html">可视化疫情预警</a>
-                </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">项目简介</a>
+                    </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="prediction.html">可视化疫情预测</a>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="alert.html">可视化疫情预警</a>
+                    </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="model.html">科研创新</a>
-                </li>
-            </ul>
+                    <li class="nav-item">
+                        <a class="nav-link" href="prediction.html">可视化疫情预测</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="model.html">科研创新</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
-<header>
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="false">
-        <div class="carousel-inner" role="listbox">
-            <!-- Slide --->
-            <div class="carousel-item active" >
-                <img src="./assets/fusion-medical-animation-rnr8D3FNUNY-unsplash.jpg" class="d-block w-100 " alt="2019-ncov">
-                <div class="carousel-caption d-none d-md-block">
-                    <h2 class="display-4">3315 智能预警预测系统</h2>
-                    <p class="lead">基于大数据和人工智能技术面向新型传染病的重大场景融合预测预警系统研发</p>
+    <header>
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="false">
+            <div class="carousel-inner" role="listbox">
+                <!-- Slide --->
+                <div class="carousel-item active">
+                    <img src="./assets/fusion-medical-animation-rnr8D3FNUNY-unsplash.jpg" class="d-block w-100 "
+                        alt="2019-ncov">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2 class="display-4">3315 智能预警预测系统</h2>
+                        <p class="lead">基于大数据和人工智能技术面向新型传染病的重大场景融合预测预警系统研发</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</header>
+    </header>
 
-<!-- Page Content -->
-<section class="py-5">
-    <div class="container">
-        <h1 id="introduction" class="display-4">项目简介</h1> <br/>
-        <p class="lead">
-              对于新型冠状病毒（COVID-19），除了病毒的传染性强等客观因素外，我国的传染病预警系统没有进行及时有效的预警，也是此次疫情如此严重的原因之一。传染病的监测预警是公共卫生领域的重要组成部分。高效的传染病自动预警信息系统能够早期发现传染病爆发的异常情况并对其进行预警，以帮助有关决策部门尽早采取相应的防控措施。由于此次疫情的预警不力，我国将加强在公共卫生以及疫情预警预控方面的支出，对传染病预测预警系统进行升级，以加强我国在疫情预测预警的能力。目前基于大数据与人工智能技术的场景融合对于传染病进行预测预警的系统还属于新兴技术领域，因此本课题所研发的产品的具有深远的社会意义与重大的经济效益，以及广阔的市场前景。<br><br>
+    <!-- Page Content -->
+    <section class="py-5">
+        <div class="container">
+            <h1 id="introduction" class="display-4">项目简介</h1> <br />
+            <p class="lead">
+                对于新型冠状病毒（COVID-19），除了病毒的传染性强等客观因素外，我国的传染病预警系统没有进行及时有效的预警，也是此次疫情如此严重的原因之一。传染病的监测预警是公共卫生领域的重要组成部分。高效的传染病自动预警信息系统能够早期发现传染病爆发的异常情况并对其进行预警，以帮助有关决策部门尽早采取相应的防控措施。由于此次疫情的预警不力，我国将加强在公共卫生以及疫情预警预控方面的支出，对传染病预测预警系统进行升级，以加强我国在疫情预测预警的能力。目前基于大数据与人工智能技术的场景融合对于传染病进行预测预警的系统还属于新兴技术领域，因此本课题所研发的产品的具有深远的社会意义与重大的经济效益，以及广阔的市场前景。<br><br>
 
-              随着国家信息化建设的进步，以及大数据和人工智能等技术的发展，建立基于大数据和人工智能技术的新型传染病监测预警预测系统是十分有必要的。新型的智能化传染病预警预测系统，将不仅仅针对此次新型冠状病毒，而是可以针对所有传染病，尤其是传染性较强的呼吸道类传染病进行精准的预警与预测。新型的预警预测系统将对当前的预警预测系统进行有效的补充与升级，帮助流行病学家更快和更准确地发现和追踪传染病，并提升政府对传染病的防控能力。<br><br>
+                随着国家信息化建设的进步，以及大数据和人工智能等技术的发展，建立基于大数据和人工智能技术的新型传染病监测预警预测系统是十分有必要的。新型的智能化传染病预警预测系统，将不仅仅针对此次新型冠状病毒，而是可以针对所有传染病，尤其是传染性较强的呼吸道类传染病进行精准的预警与预测。新型的预警预测系统将对当前的预警预测系统进行有效的补充与升级，帮助流行病学家更快和更准确地发现和追踪传染病，并提升政府对传染病的防控能力。<br><br>
 
-              基于大数据与人工智能技术面向新型传染病的重大场景融合预测预警系统的研发可以作为第三方软件平台对现有的国家预测预警系统进行很好的补充，而且也很符合当前的市场发展趋势。关于基于大数据和人工智能技术面向新型传染病的重大场景融合预测预警系统研发，具体研究内容包括：  
-            （1）通过网络爬虫等技术对传染病（新冠肺炎，H1N1，SARS）等关键信息进行大数据搜集。（2）对获取到的多源大数据进行集成并且将处理后的大数据存入分布式数据库。（3）在算法层面，通过神经网络构建预警预测模型。可利用自然语言处理技术中的文本分类模型来对传染病信息进行预警；在预测方面，我们将传染病动力学模型SEIR模型进行改进，并利用图神经网络对传染病疫情进行精准预测等。 （4）在软件与服务层面，通过构建可视化应用软件，实现人工智能模型与疫情预警预测的场景融合。 <br><br>
-        </p>
-    
-        <h3 id="team" class="display-4">团队成员</h3>
-        <p class="lead" id= "member">
-            Supervisor: Dr Ying Weng <br/>  Research: Xindi Zhao, Hejia Qiu, Yiming Zhang <br/> Engineering: Yiming Zhang <br/>
-        </p>
+                基于大数据与人工智能技术面向新型传染病的重大场景融合预测预警系统的研发可以作为第三方软件平台对现有的国家预测预警系统进行很好的补充，而且也很符合当前的市场发展趋势。关于基于大数据和人工智能技术面向新型传染病的重大场景融合预测预警系统研发，具体研究内容包括：
+                （1）通过网络爬虫等技术对传染病（新冠肺炎，H1N1，SARS）等关键信息进行大数据搜集。（2）对获取到的多源大数据进行集成并且将处理后的大数据存入分布式数据库。（3）在算法层面，通过神经网络构建预警预测模型。可利用自然语言处理技术中的文本分类模型来对传染病信息进行预警；在预测方面，我们将传染病动力学模型SEIR模型进行改进，并利用图神经网络对传染病疫情进行精准预测等。
+                （4）在软件与服务层面，通过构建可视化应用软件，实现人工智能模型与疫情预警预测的场景融合。 <br><br>
+            </p>
 
-    </div>
-</section>
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+            <h3 id="team" class="display-4">团队成员</h3>
+            <p class="lead" id="member">
+                Supervisor: Dr Ying Weng <br /> Research: Xindi Zhao, Hejia Qiu, Yiming Zhang <br /> Engineering: Yiming
+                Zhang <br />
+            </p>
 
-<!-- jquery -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<!-- Leaflet JavaScript -->
-<script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+        </div>
+    </section>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
         integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
         crossorigin=""></script>
-<!-- Chart JS JavaScript -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <!-- Chart JS JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 
-<script type="text/javascript" src='js/map.js'></script>
-<script type="text/javascript" src='js/chart.js'></script>
 </body>
 
 
 <footer class="footer">
     <!-- Copyright -->
     <div class="text-muted">
-            <span>© 2020 Copyright:  University of Nottingham, China</span>
+        <span>© 2020 Copyright: University of Nottingham, China</span>
     </div>
 
 </footer>

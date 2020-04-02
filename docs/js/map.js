@@ -29,11 +29,11 @@ var jsonData = $.ajax({
 // uses jquery when and done, as load geo json is async
 $.when(jsonData).done(function() {
 var mymap1 = L.map('mapid1',{
-    maxZoom: 4,
-    minZoom: 4,
+    maxZoom: 4.7,
+    minZoom: 4.7,
     layers: [street]
 }
-).setView([34.889874,107.574709], 4);
+).setView([39.370351,105.442496], 4.7);
 
 console.log(jsonData);
 
@@ -50,8 +50,8 @@ var myIcon = L.icon({
 });
 
 //* 社交媒体类的图标
-var myIcon2 = L.icon({
-    iconUrl: './assets/twitter.png',
+var weiboIcon = L.icon({
+    iconUrl: './assets/weibo-website-logo.png',
     iconSize: [20, 20],
     iconAnchor: [22, 94],
     popupAnchor: [-3, -76],
@@ -62,9 +62,9 @@ var useful1     = L.marker([24,  114.30],{icon: myIcon}).bindPopup('2020年1月9
     useful2     = L.marker([-38.433859306,  144.593741856],{icon: myIcon}).bindPopup('"You forgot to pack me 😭I miss you already vi_keeland ❤️ @ Melbourne Airport https://t.co/P7jt3mV12Q '),
     useful3     = L.marker([-36.833285001,  144.380744992],{icon: myIcon}).bindPopup('The latest posts on Easter 2019 is up! There was a bit of a delay while I fought off a cold and handed in multiple… https://t.co/nAuzhepur5');
 
-var rubbish1 =     L.marker([22.868336,121.543991],{icon: myIcon2}).bindPopup('2020年2月8日， 来源: Twitter，内容：医院的发热门诊人数很多!  https://t.co/s9ZDMXP0Wa'),
-    rubbish2     = L.marker([-37.812,  144.937],{icon: myIcon2}).bindPopup('&amp;b reminiscent of Toohey’s Old #atthesource - Drinking an Urban Dark by Urban Alley Brewery @ Urban Alley Brewery  — https://t.co/Fal9wCCwYb'), 
-    rubbish3     = L.marker([ -37.8595, 144.978],{icon: myIcon2}).bindPopup('"Conflicted about this one. Infected with something Brettish, but this combines with big floral hops and ends up an… https://t.co/Sa8acmiXZh');
+var rubbish1 =     L.marker([22.868336,121.543991],{icon: myIcon}).bindPopup('2020年2月8日， 来源: Twitter，内容：医院的发热门诊人数很多!  https://t.co/s9ZDMXP0Wa'),
+    rubbish2     = L.marker([-37.812,  144.937],{icon: myIcon}).bindPopup('&amp;b reminiscent of Toohey’s Old #atthesource - Drinking an Urban Dark by Urban Alley Brewery @ Urban Alley Brewery  — https://t.co/Fal9wCCwYb'), 
+    rubbish3     = L.marker([ -37.8595, 144.978],{icon: myIcon}).bindPopup('"Conflicted about this one. Infected with something Brettish, but this combines with big floral hops and ends up an… https://t.co/Sa8acmiXZh');
 
 var places = L.layerGroup([useful1, useful2, useful3]);
 var places2 = L.layerGroup([rubbish1, rubbish2, rubbish3]);
@@ -76,7 +76,6 @@ var baseMaps = {
     "basemap": CartoDB_Voyager
 };
 
-//! 在地图上显示具体的新闻来源等信息
 var overlayMaps = {
     "新闻": places,
     "社交媒体": places2
@@ -90,11 +89,23 @@ var overlayMaps = {
 
 L.control.layers(overlayMaps).addTo(mymap1);
 
+
+
+//! 加上图标， 经度 offset - 4 
+
+L.marker([26.437722,114.159201],{icon: weiboIcon}).bindPopup('时间：2020年2月8日， 来源：微博，地点：武汉，内容：医院的发热门诊人数很多 😃!').addTo(mymap1);
+L.marker([26.437722,112.400215],{icon: weiboIcon}).bindPopup('时间：2020年2月8日， 来源：微博，地点：无，内容：今天公司很多人因为咳嗽、发烧请假了。').addTo(mymap1);
+L.marker([26.447722,115.159201],{icon: myIcon}).bindPopup('时间：2020年1月9日， 来源: 世界卫生组织官方网站， 地点：武汉，内容：“世卫组织关于中国武汉聚集性肺炎病例的声明”，https://www.who.int/china/zh/news/detail/09-01-2020-who-statement-regarding-cluster-of-pneumonia-cases-in-wuhan-china').addTo(mymap1);
+
+
+L.marker([25.874910,121.537498],{icon: weiboIcon}).bindPopup('时间：2020年2月10日， 来源：微博，地点：杭州，内容：听说医院里有确诊的新冠肺炎患者').addTo(mymap1);
+L.marker([24.874910,121.537498],{icon: weiboIcon}).bindPopup('时间：2020年2月15日， 来源：微博，地点：无，内容：邻居一家都住院了，好像是新冠肺炎').addTo(mymap1);
+
  //! 低风险为绿色，中风险为黄色，高风险为红色， HEX编码代表颜色
 function getColor(d) {
-    return d == "低" ? '#00CC00' : 
-           d == "中" ? '#FFFF00' :
-           d == "高"  ? '#FF0000' :
+    return d == "低" ? '#1B813E' : 
+           d == "中" ? '#F05E1C' :
+           d == "高"  ? '#CB1B45' :
                       '#33FF00';
 }
 
@@ -122,10 +133,10 @@ info.onAdd = function (map) {
 
 // method that we will use to update the control based on feature properties passed
 info.update = function (props) {
-    this._div.innerHTML = '<h5>预警等级</h5>' +  (props ?
+    this._div.innerHTML = '<h5>可视化预警地图</h5>' +  (props ?
         '<b>'
         + props.name+  '<br />'
-        + '预警等级：'  +  props.alertLevel + '<br />' 
+        + '新冠肺炎 预警等级：'  +  props.alertLevel + '<br />' 
 
         : '请将鼠标放在地图上来查看预警等级');
 };
@@ -195,3 +206,45 @@ geojson = L.geoJson(jsonData.responseJSON, {
 }).addTo(mymap1);
 
 });
+
+
+
+//! Dynamic Table
+
+var dataSet = [
+    [ "新冠肺炎", "2020年2月8日", "微博", "武汉", "医院的发热门诊人数很多 😃!", "高" ],
+    [ "新冠肺炎", "2020年2月8日", "微博", "无", "今天公司很多人因为咳嗽、发烧请假了。", "中" ],
+    [ "新冠肺炎", "2020年1月9日", "世界卫生组织官方网站", "武汉", "2009/01/12", "高" ],
+    [ "新冠肺炎", "2020年2月10日", "微博", "杭州", "听说医院里有确诊的新冠肺炎患者", "高" ],
+    [ "新冠肺炎", "2020年2月15日", "微博", "无", "邻居一家都住院了，好像是新冠肺炎", "中" ]
+];
+ 
+$(document).ready(function() {
+    $('#table').DataTable( {
+        data: dataSet,
+        columns: [
+            { title: "传染病名称" },
+            { title: "时间" },
+            { title: "信息来源" },
+            { title: "地点" },
+            { title: "内容" },
+            { title: "预警等级" }
+        ]
+    } );
+} );
+
+
+
+//! 对table进行 隐藏和展示
+// 初始化是隐藏的table
+var tablewrap = document.getElementById('displaytable');
+tablewrap.classList.toggle('hidden')
+
+var click = document.getElementById('clickme');
+click.addEventListener('click', myfunction);
+
+function myfunction() {
+  var tablewrap = document.getElementById('displaytable');
+  tablewrap.classList.toggle('hidden')
+};
+

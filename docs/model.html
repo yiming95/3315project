@@ -1,113 +1,147 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
-          integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
-          crossorigin=""/>
+        integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+        crossorigin="" />
 
     <link rel="stylesheet" type="text/css" href="./style.css" />
-    <link rel="shortcut icon" href="assets/unnc.jpeg"> 
+    <link rel="shortcut icon" href="assets/unnc.jpeg">
     <title>3315</title>
 </head>
 
 <body>
-<!-- Navigation -->
+    <!-- Navigation -->
 
-<nav class="navbar navbar-expand-lg navbar-light fixed-top" >
-    <div class="container">
-        <img class="navbar-brand" src="./assets/unnc.jpeg" alt="logo">
-        <a class="navbar-brand" href="#">UNNC 3315智能预警预测系统</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-                
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">项目简介</a>
-                </li>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <img class="navbar-brand" src="./assets/unnc.jpeg" alt="logo">
+            <a class="navbar-brand" href="#">UNNC 3315传染病智能预警预测系统</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
 
-                <li class="nav-item">
-                    <a class="nav-link" href="alert.html">可视化疫情预警</a>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">项目简介</a>
+                    </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="prediction.html">可视化疫情预测</a>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="alert.html">可视化疫情预警</a>
+                    </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="model.html">科研创新</a>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="prediction.html">可视化疫情预测</a>
+                    </li>
 
-            </ul>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="model.html">科研创新</a>
+                    </li>
+
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
-<br/> <br/>
-<!-- Page Content -->
-<section class="py-5">
-    <div class="container">
-        <h1 id="introduction" class="display-4">模型详情</h1> <br/>
-        <p class="lead">
-            在大数据 NLP 科研方向上，创新点主要为数据源的创新, 自然语言处理文本分类模型的创新以及传染病预警分析方法的创新，具体描述如下。 <br/><br/>
+    </nav>
+    <br /> <br />
+    <!-- Page Content -->
+    <section class="py-5">
+        <div class="container">
+            <h1 id="introduction" class="display-4">模型详情</h1> <br />
+            <p class="lead">
+                在大数据 NLP 科研方向上，创新点主要为数据源的创新, 自然语言处理文本分类模型的创新以及传染病预警分析方法的创新，具体描述如下。 <br /><br />
 
-            1. 传染病相关的多源数据集(语料库): 目前在 text classification 这个方向上比较流行的数据集为: Reuters 数据集 和 arXiv Academic Paper 数据集等。就我们所知， 在医疗健康方向，特别是传染病相关的文本分类方向，并没有公开的数据集。因此本项目通过多源数据收集模块，使用网络爬虫，Twitter 数据，CDC 数据等，将构建一个中文英文两种语言的传染病相关的多源数据集。如果项目将来开源一部分数据集， 即可为后续相关研究人员研究医疗健康类的文本分类 (text classification) 提供来源可靠的数据集，在领域内作出贡献。 <br/><br/>
-            
-            2. 自然语言处理文本分类模型:自然语言处理文本分类 (text classification)是指为句子 或文档分配适当类别的任务。模型的输入为一个文件d (通常表示为特征向量形式)， 以及固定的输出类别 C = { c1,c2,...ck } (在本项目为“与传染病有关”和“与传染病 无关”两类)，模型的输出为预测结果。一个文本分类模型通常包括特征提取(Feature Extraction)，降维 (Dimensional Reduction)，分类 (Classification) 以及模型评估 (Evaluation)。本项目在自然语言处理文本分类模型上的创新点为在分类器上: 创建新的基于CNN+MLP的深度学习网络模型并用来进行传染病的文本分类任务。 <br/><br/>
+                1. 传染病相关的多源数据集(语料库): 目前在 text classification 这个方向上比较流行的数据集为: Reuters 数据集 和 arXiv Academic Paper
+                数据集等。就我们所知， 在医疗健康方向，特别是传染病相关的文本分类方向，并没有公开的数据集。因此本项目通过多源数据收集模块，使用网络爬虫，Twitter 数据，CDC
+                数据等，将构建一个中文英文两种语言的传染病相关的多源数据集。如果项目将来开源一部分数据集， 即可为后续相关研究人员研究医疗健康类的文本分类 (text classification)
+                提供来源可靠的数据集，在领域内作出贡献。 <br /><br />
 
-            比较常见的分类模型为机器学习模型如:朴素贝叶斯分类器 (Naïve Bayes Classifier), K 近邻(K-Nearest Neighbour) 以及支持向量机 (Support Vector Machine) 等。在本项目中，我们将以这些机器学习的方法作为 baseline，并在我们组建的数据集上进行实验。深度学习中的卷积神经网络 (CNN) 原本是用来应用在机器视觉中的图像处理任务，但是近年来，CNN在自然语言处理中的文本分类任务上，也表现出了出色的成绩，比如，Alexis Conneau等提出了一个在词层面上的CNN模型在文本分类上取得了不错的成绩; Rie Johnson等则提出了一个使用 LSTM作为局部词嵌入的CNN网络用来进行文本分类。Alexis Conneau的模型目前在文本分类任务上是现有技术的最高水平之一 (SOTA) , 因此我们拟基于Alexis Conneau模型上提出四点创新：<br/><br/>
+                2. 自然语言处理文本分类模型:自然语言处理文本分类 (text classification)是指为句子 或文档分配适当类别的任务。模型的输入为一个文件d (通常表示为特征向量形式)， 以及固定的输出类别
+                C = { c1,c2,...ck } (在本项目为“与传染病有关”和“与传染病 无关”两类)，模型的输出为预测结果。一个文本分类模型通常包括特征提取(Feature Extraction)，降维
+                (Dimensional Reduction)，分类 (Classification) 以及模型评估 (Evaluation)。本项目在自然语言处理文本分类模型上的创新点为在分类器上:
+                创建新的基于CNN+MLP的深度学习网络模型并用来进行传染病的文本分类任务。 <br /><br />
 
-            2.1: Alexis Conneau使用的Encoded Characters的特征，而我们将在特征提取上使用TF-IDF与Encoded Characters相结合的方式。特征提取的基本思路是根据某个评价指标独立的对原始特征项（词项）进行评分排序，从中选择得分最高的一些特征项，过滤掉其余的特征项。Encoded characters使用的是字符嵌入与词嵌入相结合的方法，目的是将文本数据转化为数值数据，获取一个单词的数值表示，并使用这些数值向量得到句子/段落/文本等数值表示。然而训练字符嵌入在计算上十分昂贵，因此我们考虑结合TF-IDF方法。Kowsari等人在他们提出的文本分类模型中，就用到了TF-IDF作为特征提取方法 [7] 。TF-IDF方法中TF为Term Frequency用来表征一个词的重要度与在类别内的词频成正比，而IDF为Inverse Document Frequency用来表征一个词的重要度与所有类别出现的次数成反比。TF-IDF可以很好的表达特征权重，因此我们认为TF-IDF与Encoded Characters相结合的特征提取方式会取得更好的效果。<br/><br/>
+                比较常见的分类模型为机器学习模型如:朴素贝叶斯分类器 (Naïve Bayes Classifier), K 近邻(K-Nearest Neighbour) 以及支持向量机 (Support Vector
+                Machine) 等。在本项目中，我们将以这些机器学习的方法作为 baseline，并在我们组建的数据集上进行实验。深度学习中的卷积神经网络 (CNN)
+                原本是用来应用在机器视觉中的图像处理任务，但是近年来，CNN在自然语言处理中的文本分类任务上，也表现出了出色的成绩，比如，Alexis
+                Conneau等提出了一个在词层面上的CNN模型在文本分类上取得了不错的成绩; Rie Johnson等则提出了一个使用 LSTM作为局部词嵌入的CNN网络用来进行文本分类。Alexis
+                Conneau的模型目前在文本分类任务上是现有技术的最高水平之一 (SOTA) , 因此我们拟基于Alexis Conneau模型上提出四点创新：<br /><br />
 
-            2.2: Alexis Conneau在池化方法中使用K-Max pooling， 我们将使用Chunk-Max pooling的方法进行改进实验，看能否能取得更好的效果。 池化（Pooling）是卷积神经网络中的一个重要的概念，它实际上是一种形式的降采样。有多种不同形式的非线性池化函数，池化层会不断地减小数据的空间大小，因此参数的数量和计算量也会下降，这在一定程度上也控制了过拟合。Max-pooling即最大池化是对邻域内特征只求最大，而K-max pooling可以取每一个filter抽取的一些特征值中得分在前K大的值，并保留他们的相对的先后顺序。Chunk-Max pooling是把某个filter抽取到的特征向量进行分段，切割成若干段后，在每个分段里面各自取得一个最大特征值，比如将某个filter的特征向量切成3个chunk，那么就在每个chunk里面取一个最大值，于是获得3个特征值。相比于K-Max pooling，Chunk-Max pooling的方法能够保留了多个局部最大特征值的相对顺序信息。因此我们期望使用Chunk-Max pooling的方法能够取得比K-Max pooling更好的表现。<br/><br/>
+                2.1: Alexis Conneau使用的Encoded Characters的特征，而我们将在特征提取上使用TF-IDF与Encoded
+                Characters相结合的方式。特征提取的基本思路是根据某个评价指标独立的对原始特征项（词项）进行评分排序，从中选择得分最高的一些特征项，过滤掉其余的特征项。Encoded
+                characters使用的是字符嵌入与词嵌入相结合的方法，目的是将文本数据转化为数值数据，获取一个单词的数值表示，并使用这些数值向量得到句子/段落/文本等数值表示。然而训练字符嵌入在计算上十分昂贵，因此我们考虑结合TF-IDF方法。Kowsari等人在他们提出的文本分类模型中，就用到了TF-IDF作为特征提取方法
+                [7] 。TF-IDF方法中TF为Term Frequency用来表征一个词的重要度与在类别内的词频成正比，而IDF为Inverse Document
+                Frequency用来表征一个词的重要度与所有类别出现的次数成反比。TF-IDF可以很好的表达特征权重，因此我们认为TF-IDF与Encoded
+                Characters相结合的特征提取方式会取得更好的效果。<br /><br />
 
-            2.3: Alexis Conneau的输入是新闻类的长文本，而我们则将使用 “基于规则” 的方法，缩短输入的文本长度。如果一篇文章的内容过长，很可能一些不必要的文章内容会影响文章的主体思想判断。因此结合人们阅读文章的经验，我们认为一篇文章的第一句话，或者是一篇论文的abstract通常会涵盖整篇文章的内容。在模型实验中，我们将使用 “基于规则” 的方法，自定义文本处理流程，使用文本第一句话或者Abstract代替文章整体，使得输入的文本既能很大程度上保留原意，又缩短了文本长度，我们希望通过这种方法能够提升模型的准确率。 <br/><br/>
+                2.2: Alexis Conneau在池化方法中使用K-Max pooling， 我们将使用Chunk-Max pooling的方法进行改进实验，看能否能取得更好的效果。
+                池化（Pooling）是卷积神经网络中的一个重要的概念，它实际上是一种形式的降采样。有多种不同形式的非线性池化函数，池化层会不断地减小数据的空间大小，因此参数的数量和计算量也会下降，这在一定程度上也控制了过拟合。Max-pooling即最大池化是对邻域内特征只求最大，而K-max
+                pooling可以取每一个filter抽取的一些特征值中得分在前K大的值，并保留他们的相对的先后顺序。Chunk-Max
+                pooling是把某个filter抽取到的特征向量进行分段，切割成若干段后，在每个分段里面各自取得一个最大特征值，比如将某个filter的特征向量切成3个chunk，那么就在每个chunk里面取一个最大值，于是获得3个特征值。相比于K-Max
+                pooling，Chunk-Max pooling的方法能够保留了多个局部最大特征值的相对顺序信息。因此我们期望使用Chunk-Max pooling的方法能够取得比K-Max
+                pooling更好的表现。<br /><br />
 
-            2.4: 多层感知机 (MLP)是一个多层神经网络，包括输入层，隐藏层和输出层。我们的实验将另外训练一个多层感知机模型，并将基于之前三点创新所训练的全新的CNN模型（如图2所示）与多层感知机模型 (MLP) 相融合， 提出一个CNN+MLP的融合后的新模型。如下图所示，在示意图的左边为MLP模型，右边为CNN模型，我们把这两个模型融合后，并将预测结果取均值，我们希望通过模型融合使得整个神经网络取得更好的表现效果。  <br/><br/>
+                2.3: Alexis Conneau的输入是新闻类的长文本，而我们则将使用 “基于规则”
+                的方法，缩短输入的文本长度。如果一篇文章的内容过长，很可能一些不必要的文章内容会影响文章的主体思想判断。因此结合人们阅读文章的经验，我们认为一篇文章的第一句话，或者是一篇论文的abstract通常会涵盖整篇文章的内容。在模型实验中，我们将使用
+                “基于规则” 的方法，自定义文本处理流程，使用文本第一句话或者Abstract代替文章整体，使得输入的文本既能很大程度上保留原意，又缩短了文本长度，我们希望通过这种方法能够提升模型的准确率。
+                <br /><br />
 
-            综上，我们将基于以上四点创新提出一个全新的 CNN + MLP 的深度学习网络模型。我们将使用准确率 (accuracy) 作为模型评估的方法，预计该模型在我们的数据集上将取得90以上的准确率。  <br/><br/>
+                2.4: 多层感知机 (MLP)是一个多层神经网络，包括输入层，隐藏层和输出层。我们的实验将另外训练一个多层感知机模型，并将基于之前三点创新所训练的全新的CNN模型（如图2所示）与多层感知机模型 (MLP)
+                相融合， 提出一个CNN+MLP的融合后的新模型。如下图所示，在示意图的左边为MLP模型，右边为CNN模型，我们把这两个模型融合后，并将预测结果取均值，我们希望通过模型融合使得整个神经网络取得更好的表现效果。
+                <br /><br />
+
+                综上，我们将基于以上四点创新提出一个全新的 CNN + MLP 的深度学习网络模型。我们将使用准确率 (accuracy) 作为模型评估的方法，预计该模型在我们的数据集上将取得90以上的准确率。
+                <br /><br />
 
 
-            <img src="assets/Picture 1.png" alt="模型" />
-            <br/><br/>
+                <img src="assets/Picture 1.png" alt="模型" />
+                <br /><br />
 
-        </p>
+            </p>
 
 
-    </div>
-</section>
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        </div>
+    </section>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
 
-<!-- jquery -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<!-- Leaflet JavaScript -->
-<script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
         integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
         crossorigin=""></script>
-<!-- Chart JS JavaScript -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <!-- Chart JS JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 
-<script type="text/javascript" src='js/map.js'></script>
-<script type="text/javascript" src='js/chart.js'></script>
+
 </body>
 
 
 <footer class="footer">
     <!-- Copyright -->
     <div class="text-muted">
-            <span>© 2020 Copyright:  University of Nottingham, China</span>
+        <span>© 2020 Copyright: University of Nottingham, China</span>
     </div>
 
 </footer>
