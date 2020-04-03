@@ -16,6 +16,14 @@
         crossorigin="" />
 
     <link rel="stylesheet" type="text/css" href="./style.css" />
+
+     <!-- Pretty Checkbox CSS -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css"
+     integrity="" crossorigin="">
+
+    
+
+    
     <link rel="shortcut icon" href="assets/unnc.jpeg">
     <title>3315</title>
 </head>
@@ -59,12 +67,42 @@
         <div class="container">
             <!-- 可视化预测 -->
 
+            <div class="pretty p-default p-round">
+                <input type="checkbox" />
+                <div class="state p-success-o">
+                    <label>城市居民自我隔离</label>
+                </div>
+            </div>
+
+            <div class="pretty p-default p-round">
+                <input type="checkbox" />
+                <div class="state p-success-o">
+                    <label>切断城市交通</label>
+                </div>
+            </div>
+
+            <div class="pretty p-default p-round">
+                <input type="checkbox" />
+                <div class="state p-success-o">
+                    <label>城市封闭化管理</label>
+                </div>
+            </div>
+
+            <div class="pretty p-default p-round">
+                <input type="checkbox" />
+                <div class="state p-success-o">
+                    <label>城市军事化管理</label>
+                </div>
+            </div>
+
+            <br/><br/>
+
             <div class="row m-b-1">
                 <div class="col-lg-6">
                     <div class="card shadow">
                         <h4 class="card-header">Product Wise Revenue</h4>
                         <div class="card-block">
-                            <canvas id="bar-chart-horizontal1" width="800" height="450"></canvas>
+                            <canvas id="bar-chart-horizontal1" width="800" height="450"></canvas>                            
                         </div>
                     </div>
                 </div>
@@ -131,7 +169,6 @@
     <!-- Chart JS JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 
-    <script type="text/javascript" src='js/map.js'></script>
     <script type="text/javascript" src='js/chart.js'></script>
 </body>
 

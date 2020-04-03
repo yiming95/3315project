@@ -7,6 +7,10 @@ var street = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {attribution
         subdomains: 'abcd',
         maxZoom: 19
     });
+    Stadia_AlidadeSmoothDark = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png', {
+	maxZoom: 20,
+	attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
+});
 
 var jsonData = $.ajax({
         // AURIN Job dataset API: http://45.113.233.243:5984/job_json/90a80a4fc502d169ebce4ee07a001fb8
@@ -36,7 +40,9 @@ $.when(jsonData).done(function() {
 var mymap1 = L.map('mapid1',{
     maxZoom: 4.7,
     minZoom: 4.7,
-    layers: [street]
+
+    //! 设置地图图层
+    layers: [Stadia_AlidadeSmoothDark]
 }
 ).setView([39.370351,105.442496], 4.7);
 
@@ -56,7 +62,7 @@ var myIcon = L.icon({
 
 //* 社交媒体类的图标
 var weiboIcon = L.icon({
-    iconUrl: './assets/weibo-website-logo.png',
+    iconUrl: './assets/sina-weibo.png',
     iconSize: [20, 20],
     iconAnchor: [22, 94],
     popupAnchor: [-3, -76],
@@ -78,7 +84,7 @@ var places2 = L.layerGroup([rubbish1, rubbish2, rubbish3]);
 var baseMaps = {
     //"basemap": street,
     //"basemap": satellite
-    "basemap": CartoDB_Voyager
+    "basemap": satellite
 };
 
 var overlayMaps = {
@@ -108,9 +114,9 @@ L.marker([24.874910,121.537498],{icon: weiboIcon}).bindPopup('时间：2020年2�
 
  //! 低风险为绿色，中风险为黄色，高风险为红色， HEX编码代表颜色
 function getColor(d) {
-    return d == "低" ? '#1B813E' : 
-           d == "中" ? '#F05E1C' :
-           d == "高"  ? '#CB1B45' :
+    return d == "低" ? '#142850' : 
+           d == "中" ? '#27496D' :
+           d == "高"  ? '#00A8CC' :
                       '#33FF00';
 }
 
