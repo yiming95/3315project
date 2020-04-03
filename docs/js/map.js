@@ -16,14 +16,15 @@ var jsonData = $.ajax({
         //url: "https://api.myjson.com/bins/xefh8",
         //url: "https://api.myjson.com/bins/8ikps",   //! 中国地图 GEO JSON, 里面包含疫情等级的数据， RESTFUL API 
 
-        url: "https://extendsclass.com/api/json-storage/bin/bcddcbe",
+        //url: "https://extendsclass.com/api/json-storage/bin/bcddcbe",
         //url: "https://github.com/yiming95/3315_project/blob/master/china.json",
+        url: "https://api.jsonbin.io/b/5e86fcda4f5f49640ba32b11",
 
         type: "GET",
         dataType: "json",
         success: console.log("GeoJson successfully loaded"),
       
-        headers: {"Access-Control-Allow-Origin":"*"},
+        headers: {"secret-key":"$2b$10$uv5gYhIFs8qheqN0AXoH8eVbWsVpTW6/veoMyzzYFhVJuR0f66Xz."},
         error: function (xhr) {
           alert(xhr.statusText)
         }
