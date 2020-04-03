@@ -14,12 +14,15 @@ var jsonData = $.ajax({
         //url:"http://admin:123qweasd@45.113.233.243:5984/homeless_json/ff4be0927955452a280785783d00c807",
         
         //url: "https://api.myjson.com/bins/xefh8",
-        url: "https://api.myjson.com/bins/8ikps",   //! 中国地图 GEO JSON, 里面包含疫情等级的数据， RESTFUL API 
+        //url: "https://api.myjson.com/bins/8ikps",   //! 中国地图 GEO JSON, 里面包含疫情等级的数据， RESTFUL API 
+
+        url: "https://extendsclass.com/api/json-storage/bin/bcddcbe",
+        //url: "https://github.com/yiming95/3315_project/blob/master/china.json",
         
         type: "GET",
         dataType: "json",
-        success: console.log("GeoJson successfully loaded from couchDB."),
-        // to log in the couchdb account
+        success: console.log("GeoJson successfully loaded"),
+      
         headers: { "Authorization": "Basic " + btoa("admin" + ":" + "123qweasd")},
         error: function (xhr) {
           alert(xhr.statusText)
