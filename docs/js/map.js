@@ -18,16 +18,17 @@ var jsonData = $.ajax({
 
         url: "https://extendsclass.com/api/json-storage/bin/bcddcbe",
         //url: "https://github.com/yiming95/3315_project/blob/master/china.json",
-        
+
         type: "GET",
         dataType: "json",
         success: console.log("GeoJson successfully loaded"),
       
-        headers: { "Authorization": "Basic " + btoa("admin" + ":" + "123qweasd")},
+        headers: {"Access-Control-Allow-Origin":"*"},
         error: function (xhr) {
           alert(xhr.statusText)
         }
       }) 
+
 
 // uses jquery when and done, as load geo json is async
 $.when(jsonData).done(function() {
