@@ -61,7 +61,7 @@ $.when(jsonData).done(function() {
 
     //! 设置地图图层
     layers: [Stadia_AlidadeSmoothDark]
-  }).setView([39.370351, 105.442496], 4.7);
+  }).setView([37.370351, 105.442496], 4.7);
 
   console.log(jsonData);
 
