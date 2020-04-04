@@ -129,7 +129,7 @@ $.when(jsonData).done(function() {
   //northEast = L.latLng(-35.61804716978352,  146.2981463623047);
   //mymap1.setMaxBounds(new L.LatLngBounds(southWest, northEast));
 
-  L.control.layers(overlayMaps).addTo(mymap1);
+//   L.control.layers(overlayMaps).addTo(mymap1);
 
   //! 加上图标， 经度 offset - 4
 
@@ -170,6 +170,10 @@ $.when(jsonData).done(function() {
       ? "#00A8CC"
       : "#33FF00";
   }
+
+//! Full screen
+
+mymap1.addControl(new L.Control.Fullscreen());
 
   function style(feature) {
     return {
@@ -342,3 +346,5 @@ function myfunction() {
   var tablewrap = document.getElementById("displaytable");
   tablewrap.classList.toggle("hidden");
 }
+
+

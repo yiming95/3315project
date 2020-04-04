@@ -43,7 +43,7 @@ new Chart(document.getElementById("line-chart1"), {
   options: {
     title: {
       display: true,
-      text: "全国疫情预测图"
+      text: "模拟后：全国疫情预测图"
     }
   }
 });
@@ -93,7 +93,7 @@ new Chart(document.getElementById("line-chart2"), {
   options: {
     title: {
       display: true,
-      text: "全省疫情预测图"
+      text: "模拟后：浙江省疫情预测图"
     }
   }
 });
@@ -143,14 +143,14 @@ new Chart(document.getElementById("line-chart3"), {
   options: {
     title: {
       display: true,
-      text: "全市疫情预测图"
+      text: "模拟后：宁波市疫情预测图"
     }
   }
 });
 
 //! 柱状图： 排名前十的 COVID-19 国家确诊人数
 
-new Chart(document.getElementById("bar-chart-horizontal1"), {
+new Chart(document.getElementById("bar-chart"), {
   type: "horizontalBar",
   data: {
     labels: ["湖北省", "广东省", "河南省", "浙江省", "湖南省"],

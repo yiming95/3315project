@@ -27,6 +27,14 @@
     width: 95%;
 }
 
+#clickme {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    padding: 10px;
+    z-index: 400;
+  }
+
 .leaflet-bottom{
     pointer-events: auto;
 }
