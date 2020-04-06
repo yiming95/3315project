@@ -29,6 +29,14 @@ Stadia_AlidadeSmoothDark = L.tileLayer(
   }
 );
 
+var CartoDB_DarkMatter = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+	subdomains: 'abcd',
+	maxZoom: 19
+});
+
+
+
 var jsonData = $.ajax({
   // AURIN Job dataset API: http://45.113.233.243:5984/job_json/90a80a4fc502d169ebce4ee07a001fb8
   // testing melbourne geo json API: http://admin:123qweasd@45.113.233.243:5984/geo_json/2adb959d243ca8869f8d9576bb0028c2
@@ -60,10 +68,12 @@ $.when(jsonData).done(function() {
     minZoom: 4.7,
 
     //! 设置地图图层
-    layers: [Stadia_AlidadeSmoothDark]
+    layers: [CartoDB_DarkMatter]
   }).setView([37.370351, 105.442496], 4.7);
 
   console.log(jsonData);
+
+//   L.tileLayer.provider('Stadia_AlidadeSmoothDark').addTo(mymap1);
 
   // Ningbo经纬度: 29.8622194, 121.6203873
 
