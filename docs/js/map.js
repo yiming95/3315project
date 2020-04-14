@@ -357,4 +357,47 @@ function myfunction() {
   tablewrap.classList.toggle("hidden");
 }
 
+//! 对 Map中的一些数据进行可视化表达
 
+//* doughnut-chart
+new Chart(document.getElementById("doughnut-chart"), {
+  type: 'doughnut',
+  data: {
+    labels: ["高", "中", "低"],
+    datasets: [
+      {
+        label: "地区",
+        backgroundColor: ["#CC6666", "#FFCC99","#99CC99"],
+        data: [6,4,24]
+      }
+    ]
+  },
+  options: {
+    title: {
+      display: true,
+      text: '新冠肺炎预警等级分布'
+    }
+  }
+});
+
+//* horizontal-bar-chart
+new Chart(document.getElementById("bar-chart-horizontal"), {
+  type: 'horizontalBar',
+  data: {
+    labels: ["华北地区", "东北地区", "华东地区", "中南地区", "西南地区", "西北地区"],
+    datasets: [
+      {
+        label: "地区",
+        backgroundColor: ["#99CCFF", "#9999CC","#99CC99","#CC6699","#3cba9f","#3cba9f"],
+        data: [0,0,2,4,0,0]
+      }
+    ]
+  },
+  options: {
+    legend: { display: false },
+    title: {
+      display: true,
+      text: '新冠肺炎高预警区域分布'
+    }
+  }
+});
